@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>贪吃蛇</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="hud">
+      <div class="hud__scores">
+        <span>得分：<strong id="score">0</strong></span>
+        <span>最高分：<strong id="best">0</strong></span>
+      </div>
+      <div class="hud__controls">
+        <button id="btn-pause" type="button">暂停</button>
+        <button id="btn-restart" type="button">重新开始</button>
+        <label class="speed-select">
+          速度：
+          <select id="speed">
+            <option value="6">悠闲</option>
+            <option value="9" selected>标准</option>
+            <option value="12">快速</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main class="board-area">
+      <canvas id="board" width="440" height="440" role="img" aria-label="贪吃蛇棋盘"></canvas>
+      <div class="overlay" id="overlay" hidden>
+        <div class="overlay__card">
+          <h1 id="overlay-title">贪吃蛇</h1>
+          <p id="overlay-message">按下开始按钮进入游戏</p>
+          <button id="btn-start" type="button">开始游戏</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="touch-controls" aria-hidden="true">
+      <button data-dir="up" aria-label="向上" tabindex="-1">▲</button>
+      <div class="touch-controls__row">
+        <button data-dir="left" aria-label="向左" tabindex="-1">◀</button>
+        <button data-dir="down" aria-label="向下" tabindex="-1">▼</button>
+        <button data-dir="right" aria-label="向右" tabindex="-1">▶</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
